@@ -12,17 +12,17 @@ import java.time.LocalTime;
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Primary key
     private Long id;
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
+    @JoinColumn(name = "doctor_id", nullable = false) // Many-to-one relationship
     private Doctor doctor;
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
+    @JoinColumn(name = "patient_id", nullable = false) // Many-to-one relationship
     private Patient patient;
 
     @NotNull
@@ -32,7 +32,7 @@ public class Appointment {
     @NotNull
     private int status; // 0 = Scheduled, 1 = Completed
 
-    // --- Helper methods (not persisted in DB) ---
+    // --- Helper methods ---
     @Transient
     public LocalDateTime getEndTime() {
         return appointmentTime != null ? appointmentTime.plusHours(1) : null;
@@ -49,43 +49,19 @@ public class Appointment {
     }
 
     // --- Getters and Setters ---
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public Doctor getDoctor() { return doctor; }
+    public void setDoctor(Doctor doctor) { this.doctor = doctor; }
 
-    public Doctor getDoctor() {
-        return doctor;
-    }
+    public Patient getPatient() { return patient; }
+    public void setPatient(Patient patient) { this.patient = patient; }
 
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
+    public LocalDateTime getAppointmentTime() { return appointmentTime; }
+    public void setAppointmentTime(LocalDateTime appointmentTime) { this.appointmentTime = appointmentTime; }
 
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public LocalDateTime getAppointmentTime() {
-        return appointmentTime;
-    }
-
-    public void setAppointmentTime(LocalDateTime appointmentTime) {
-        this.appointmentTime = appointmentTime;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
+    public int getStatus() { return status; }
+    public void setStatus(int status) { this.status = status; }
 }
+
