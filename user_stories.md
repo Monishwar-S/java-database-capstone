@@ -92,3 +92,116 @@ Optionally, integrate this with the dashboard for easier access.
 
 ------------------------------------------
 
+View Doctors without Login
+Title:
+As a patient, I want to view a list of doctors without logging in, so that I can explore options before registering.
+
+Acceptance Criteria:
+
+The system displays a list of available doctors (name, specialization, and availability).
+
+Patients can access this list without authentication.
+
+Sensitive details (like contact info) are hidden until login.
+
+Priority: Medium
+Story Points: 3
+Notes:
+
+Add filtering/search by specialization if possible.
+
+Patient Signup
+Title:
+As a patient, I want to sign up using my email and password, so that I can book appointments.
+
+Acceptance Criteria:
+
+Patient can enter email, password, and required personal details.
+
+The system validates and saves details in MySQL.
+
+Patient receives a confirmation of successful registration.
+
+Priority: High
+Story Points: 3
+Notes:
+
+Enforce unique email addresses.
+
+Use password hashing.
+
+Patient Login
+Title:
+As a patient, I want to log into the portal, so that I can manage my bookings.
+
+Acceptance Criteria:
+
+Patient enters valid email and password.
+
+System verifies credentials against MySQL database.
+
+On success, the patient is redirected to the dashboard; on failure, an error message is shown.
+
+Priority: High
+Story Points: 2
+Notes:
+
+Enable session management.
+
+Patient Logout
+Title:
+As a patient, I want to log out of the portal, so that I can secure my account when not using it.
+
+Acceptance Criteria:
+
+Logout option is visible on the patient dashboard.
+
+Clicking logout ends the session.
+
+Patient is redirected to the login page.
+
+Priority: High
+Story Points: 2
+Notes:
+
+Session tokens must be invalidated.
+
+Book Appointment
+Title:
+As a patient, I want to log in and book an hour-long appointment with a doctor, so that I can consult with them.
+
+Acceptance Criteria:
+
+Patient can select a doctor and choose a date/time slot.
+
+The system ensures slots are available (no double booking).
+
+Appointment is saved in the MySQL database and confirmation is shown.
+
+Priority: High
+Story Points: 5
+Notes:
+
+Consider time-zone handling and preventing overlaps.
+
+View Upcoming Appointments
+Title:
+As a patient, I want to view my upcoming appointments, so that I can prepare accordingly.
+
+Acceptance Criteria:
+
+Patient can see a list of all future confirmed appointments.
+
+Each appointment shows doctor’s name, date, and time.
+
+Only appointments belonging to the logged-in patient are visible.
+
+Priority: Medium
+Story Points: 3
+Notes:
+
+Optionally, add a reminder/notification feature.
+
+
+
+---------------------------------------------------------------------
