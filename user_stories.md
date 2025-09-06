@@ -205,3 +205,112 @@ Optionally, add a reminder/notification feature.
 
 
 ---------------------------------------------------------------------
+
+
+Doctor Login
+Title:
+As a doctor, I want to log into the portal, so that I can manage my appointments.
+
+Acceptance Criteria:
+
+Doctor enters valid email/username and password.
+
+System validates credentials against the MySQL database.
+
+On success, doctor is redirected to the dashboard; on failure, an error message is shown.
+
+Priority: High
+Story Points: 2
+Notes:
+
+Ensure secure session management.
+
+Doctor Logout
+Title:
+As a doctor, I want to log out of the portal, so that I can protect my data.
+
+Acceptance Criteria:
+
+Logout option is available in the doctor’s dashboard.
+
+Clicking logout ends the active session.
+
+Doctor is redirected to the login page.
+
+Priority: High
+Story Points: 2
+Notes:
+
+Invalidate session tokens upon logout.
+
+View Appointment Calendar
+Title:
+As a doctor, I want to view my appointment calendar, so that I can stay organized.
+
+Acceptance Criteria:
+
+Doctor can see all upcoming appointments in a calendar view.
+
+Each appointment displays the patient’s name and scheduled time.
+
+Only the doctor’s appointments are shown.
+
+Priority: High
+Story Points: 4
+Notes:
+
+Optionally provide daily/weekly/monthly views.
+
+Mark Unavailability
+Title:
+As a doctor, I want to mark my unavailability, so that patients can only book available slots.
+
+Acceptance Criteria:
+
+Doctor can select date(s) or time slots as unavailable.
+
+The system updates availability in the database.
+
+Patients cannot book appointments during marked unavailable slots.
+
+Priority: High
+Story Points: 5
+Notes:
+
+Add recurring unavailability (e.g., weekly off).
+
+Update Profile
+Title:
+As a doctor, I want to update my profile with specialization and contact information, so that patients have up-to-date information.
+
+Acceptance Criteria:
+
+Doctor can edit specialization, contact details, and other relevant info.
+
+System validates inputs and updates the database.
+
+Updated profile is immediately visible to patients.
+
+Priority: Medium
+Story Points: 3
+Notes:
+
+Consider allowing profile picture uploads.
+
+View Patient Details
+Title:
+As a doctor, I want to view patient details for upcoming appointments, so that I can be prepared.
+
+Acceptance Criteria:
+
+Doctor can access patient details (name, medical history, contact info) for each booked appointment.
+
+Only details of patients with confirmed appointments are shown.
+
+Data is retrieved securely from the database.
+
+Priority: High
+Story Points: 4
+Notes:
+
+Ensure patient data is protected with proper authorization checks.
